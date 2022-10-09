@@ -16,7 +16,7 @@ const useSlider = (elementWidth, containerRef, countElements, data, poster) => {
   useEffect(() => {
     if (containerRef.current && data) {
       const containerWidth = containerRef.current.clientWidth;
-      const itemWidth = containerRef.current.firstChild.clientWidth;
+      const itemWidth = containerRef.current.firstChild?.clientWidth || 0;
       const totalInViewport = Math.ceil(containerWidth / itemWidth);
 
       setSlider(containerRef.current.children);
