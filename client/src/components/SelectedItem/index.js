@@ -1,5 +1,5 @@
 import { faImdb } from '@fortawesome/free-brands-svg-icons';
-import { faPlay, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPlus, faTimes, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 
@@ -111,6 +111,13 @@ const SelectedItem = ({ currentSlide, closeInformationWindow }) => {
                       </span>
                       <span>My List</span>
                     </button>
+                    
+                    {additionalMovieInfo.type == "Movie" &&
+                      <a href={`${process.env.REACT_APP_HOMEHOST_BASE}${additionalMovieInfo.url_path}`} download={additionalMovieInfo.title} className="hasLabel play-link-secondary" style={{ textDecoration: 'none' }} >
+                        <span className="play-icon"><FontAwesomeIcon icon={faDownload} /></span>
+                        <span>Download</span>
+                      </a>
+                    }
                   </div>
 
                   <div className="meta-lists">
