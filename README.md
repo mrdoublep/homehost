@@ -72,6 +72,8 @@ MUSIC_PATH = '/path/to/music/directory'
 
 DATABASE_URL = 'file:./data/media.db'
 CLIENT_BASE_URL = 'http://localhost:3000'
+
+LANGUAGE = en
 ```
 
 If you dont have keys, you can request API authorization from Spotify at https://developer.spotify.com/documentation/web-api/, and TMDb at https://developers.themoviedb.org/3/getting-started/introduction

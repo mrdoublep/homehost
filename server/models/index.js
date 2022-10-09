@@ -19,7 +19,7 @@ const getMovieMetaData = async (file) => {
     if (movie.status == 404 || movie.status_code == 34)
       throw 'API resource was not found';
 
-    let logo = movie.images.logos.find((logo) => logo.iso_639_1 == 'en');
+    let logo = movie.images.logos.find((logo) => logo.iso_639_1 == (process.env.LANGUAGE || 'en'))
     return {
       type: Type.Movie,
       tmdb_id: movie.id,
