@@ -20,11 +20,11 @@ class Metadata {
     }
 
     if (item.type == Type.Movie) {
-      request_url = `https://${TMDB_API}/movie/${item.id}?api_key=${process.env.TMDB_KEY}&append_to_response=images,credits,similar`;
+      request_url = `https://${TMDB_API}/movie/${item.id}?api_key=${process.env.TMDB_KEY}&append_to_response=images,credits,similar&language=${process.env.LANGUAGE}`;
     } else if (item.type == Type.TV.Show) {
-      request_url = `https://${TMDB_API}/tv/${item.id}?api_key=${process.env.TMDB_KEY}&append_to_response=images,credits,similar,external_ids`;
+      request_url = `https://${TMDB_API}/tv/${item.id}?api_key=${process.env.TMDB_KEY}&append_to_response=images,credits,similar,external_ids&language=${process.env.LANGUAGE}`;
     } else if (item.type == Type.TV.Episode) {
-      request_url = `https://${TMDB_API}/tv/${item.tv_show_id}/season/${item.season_number}/episode/${item.episode_number}?api_key=${process.env.TMDB_KEY}`;
+      request_url = `https://${TMDB_API}/tv/${item.tv_show_id}/season/${item.season_number}/episode/${item.episode_number}?api_key=${process.env.TMDB_KEY}&language=${process.env.LANGUAGE}`;
     } else if (item.type == Type.Music.Album) {
       request_url = `https://${SPOTIFY_API}/albums/${item.id}?access_token=${auth}`;
     } else if (item.type == Type.Music.Artist) {
